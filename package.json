@@ -1,0 +1,44 @@
+{
+  "name": "gulp-requirejs-rev-alias",
+  "version": "0.1.0",
+  "description": "A gulp plugin to alias modules based on revision manifest.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proof/gulp-requirejs-rev-alias.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "requirejs",
+    "rev",
+    "alias",
+    "config"
+  ],
+  "author": "Nemanja Miljkovic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/proof/gulp-requirejs-rev-alias/issues"
+  },
+  "homepage": "https://github.com/proof/gulp-requirejs-rev-alias#readme",
+  "dependencies": {
+    "gulp-requirejs-transformconfig": "^0.1.0",
+    "lodash.isfunction": "^3.0.8",
+    "lodash.isundefined": "^3.0.1",
+    "stream-combiner": "^0.2.2",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "mocha": "^3.0.0",
+    "sinon": "^1.17.5",
+    "stream-assert": "^2.0.3"
+  }
+}
