@@ -71,8 +71,8 @@ describe('requirejs-rev-alias', function () {
                 manifest: gulp.src(fixtures('manifest.json')),
                 alias: function (original, revisioned) {
                     return {
-                        original: original,
-                        revisioned: path.join('prefix', revisioned)
+                        original: original.replace(/\.js$/, ''),
+                        revisioned: path.join('prefix', revisioned).replace(/\.js$/, '')
                     };
                 }
             }))

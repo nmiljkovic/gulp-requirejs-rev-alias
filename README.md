@@ -81,3 +81,5 @@ require.config({
     }
 });
 ```
+
+If the alias function returns `false` for an entry, the entry is ignored.

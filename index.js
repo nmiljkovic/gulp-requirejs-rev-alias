@@ -5,6 +5,8 @@ var combine = require('stream-combiner');
 var isFunction = require('lodash.isfunction');
 var isUndefined = require('lodash.isundefined');
 
+var sourcemapRegex = /\.map$/;
+
 function createErrorPassthrough(error) {
     var err = createError(error);
     return through.obj(function (file, encoding, cb) {
@@ -94,9 +96,15 @@ function collectManifest(options, aliases) {
  */
 function transformConfigPaths(options, aliases) {
     return transformConfig(function (config) {
+        aliases = aliases.filter(function (alias) {
+            return !alias.original.match(sourcemapRegex);
+        });
+
         if (isFunction(options.alias)) {
             aliases = aliases.map(function (alias) {
                 return options.alias(alias.original, alias.revisioned);
+            }).filter(function (alias) {
+                return !!alias;
             });
         }
 
